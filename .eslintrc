@@ -1,0 +1,22 @@
+{
+  "extends": ["wesbos"],
+  "rules": {
+    "react/jsx-props-no-spreading": 0,
+    "jsx-a11y/control-has-associated-label": 0,
+    "react/button-has-type": 0,
+    "no-unused-vars": 0,
+    "no-console": 2,
+    "import/no-unresolved": 0,
+    "react/display-name": 0,
+    "react/prop-types": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "none",
+        "singleQuote": true,
+        // "printWidth": 120,
+        "tabWidth": 2
+      }
+    ]
+  }
+}
