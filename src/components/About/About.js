@@ -1,5 +1,5 @@
 import React from 'react';
-import Title from '../Layout/Title';
+import Title from '../Layout/Title/Title';
 import services from '../../constants/services';
 import { Wrapper } from './styles';
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import { FooterWrapper } from './styles';
+import { Wrapper } from './styles';
 
 const Footer = () => (
-  <FooterWrapper>
+  <Wrapper>
     <p>
       &copy; {new Date().getFullYear()} John Smilga. All rights reserved. Built
       with Gatsby
     </p>
-  </FooterWrapper>
+  </Wrapper>
 );
 
 export default Footer;

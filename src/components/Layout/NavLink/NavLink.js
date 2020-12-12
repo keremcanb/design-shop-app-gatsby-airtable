@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
-import { NavLinkWrapper } from './styles';
+import { Wrapper } from './styles';
 
 const NavLink = () => <h2>navlink</h2>;
 

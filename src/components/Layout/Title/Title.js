@@ -1,5 +1,5 @@
 import React from 'react';
-import { TitleWrapper } from './styles';
+import { Wrapper } from './styles';
 
 const Title = ({ title }) => <h2>title component</h2>;
 

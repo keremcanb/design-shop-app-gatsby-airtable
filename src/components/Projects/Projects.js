@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
-import Title from '../Layout/Title';
+import Title from '../Layout/Title/Title';
 import SearchButtons from '../SearchButtons';
 import { Wrapper } from './styles';
 

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Sidebar from './Sidebar';
+import Navbar from './Navbar/Navbar';
+import Footer from './Footer/Footer';
+import Sidebar from './Sidebar/Sidebar';
 
 const Layout = ({ children }) => <>{children}</>;
 
