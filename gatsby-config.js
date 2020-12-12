@@ -2,6 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
 // const queries = require("./src/constants/algolia")
+
 module.exports = {
   siteMetadata: {
     title: `Design Shop`,
@@ -30,26 +31,26 @@ module.exports = {
         fonts: [`Roboto\:400,500,700`, `Open Sans`, `Caveat`],
         display: 'swap'
       }
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.GATSBY_AIRTABLE_API,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+            tableName: `Projects`,
+            mapping: { image: `fileNode` }
+          }
+          // {
+          //   baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+          //   tableName: `Customers`,
+          //   mapping: { image: `fileNode` }
+          // }
+        ]
+      }
     }
-    // {
-    //   resolve: `gatsby-source-airtable`,
-    //   options: {
-    //     apiKey: process.env.GATSBY_AIRTABLE_API,
-    //     concurrency: 5,
-    //     tables: [
-    //       {
-    //         baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
-    //         tableName: `Projects`,
-    //         mapping: { image: `fileNode` },
-    //       },
-    //       {
-    //         baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
-    //         tableName: `Customers`,
-    //         mapping: { image: `fileNode` },
-    //       },
-    //     ],
-    //   },
-    // },
     // {
     //   resolve: `gatsby-plugin-algolia`,
     //   options: {
