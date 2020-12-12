@@ -23,7 +23,7 @@ const Navbar = () => (
           <button>products</button>
         </li>
         <li>
-          <button>devs</button>
+          <button>developers</button>
         </li>
         <li>
           <button>company</button>
