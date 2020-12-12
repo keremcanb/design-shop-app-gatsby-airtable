@@ -47,6 +47,7 @@ const HomePage = ({
   <Layout>
     <Hero />
     <About />
+    <Projects projects={projects} title="latest projects" />
   </Layout>
 );
 
