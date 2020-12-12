@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 
-export const ProjectsWrapper = styled.main`
-  min-height: 100vh;
-  background: var(--clr-grey-10);
-  nav {
-    background: var(--clr-primary-7);
-  }
-`;
-
-export const ErrorWrapper = styled.main`
+export const Wrapper = styled.main`
   margin-top: -5rem;
   background: var(--clr-primary-8);
   min-height: calc(100vh - 5rem);

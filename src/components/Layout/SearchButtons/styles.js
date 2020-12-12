@@ -1,9 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const SearchButtons = () => <h2>search buttons</h2>;
-
-const Wrapper = styled.section`
+export const Wrapper = styled.section`
   display: flex;
   margin-bottom: 0;
   justify-content: center;
@@ -26,5 +23,3 @@ const Wrapper = styled.section`
     box-shadow: 0px 1.5px 0 var(--clr-grey-6);
   }
 `;
-
-export default SearchButtons;

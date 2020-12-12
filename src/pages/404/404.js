@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Layout } from '../components';
-import { ErrorWrapper } from './styles';
+import Layout from '../../components/Layout/layout';
+import { Wrapper } from '../projects/styles';
 
 const Error = () => (
   <Layout>
-    <ErrorWrapper>
+    <Wrapper>
       <div>
         <h1>oops.</h1>
 
@@ -15,7 +15,7 @@ const Error = () => (
           home
         </Link>
       </div>
-    </ErrorWrapper>
+    </Wrapper>
   </Layout>
 );
 
