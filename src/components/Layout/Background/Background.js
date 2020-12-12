@@ -3,6 +3,37 @@ import BackgroundImage from 'gatsby-background-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Wrapper, fadeIn } from './styles';
 
-const Background = () => <h2>background image component</h2>;
+const query = graphql`
+  {
+    file(relativePath: { eq: "mainBcg.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
+
+const Background = ({ children }) => {
+  const {
+    file: {
+      childImageSharp: { fluid }
+    }
+  } = useStaticQuery(query);
+
+  return (
+    <Wrapper>
+      <BackgroundImage
+        Tag="div"
+        fluid={fluid}
+        className="bcg"
+        preserveStackingContext
+      >
+        {children}
+      </BackgroundImage>
+    </Wrapper>
+  );
+};
 
 export default Background;

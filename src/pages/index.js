@@ -20,7 +20,7 @@ import SEO from '../components/Seo/seo';
 
 const HomePage = () => (
   <Layout>
-    <h2>home page</h2>
+    <Hero />
   </Layout>
 );
 
