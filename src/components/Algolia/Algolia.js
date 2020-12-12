@@ -8,7 +8,7 @@ import {
   connectHits
 } from 'react-instantsearch-dom';
 import Title from '../Layout/Title';
-import { Wrapper, Container } from './styles.';
+import { Wrapper, Container } from './styles';
 
 const Search = () => <h2>algolia search</h2>;
 

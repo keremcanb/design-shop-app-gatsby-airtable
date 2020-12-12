@@ -27,4 +27,5 @@ const Wrapper = styled.section`
     opacity: 1;
   }
 `;
+
 export default Background;

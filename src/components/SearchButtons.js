@@ -26,4 +26,5 @@ const Wrapper = styled.section`
     box-shadow: 0px 1.5px 0 var(--clr-grey-6);
   }
 `;
+
 export default SearchButtons;
