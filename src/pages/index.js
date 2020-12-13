@@ -20,6 +20,7 @@ const HomePage = ({
     <Hero projects={projects} />
     <About />
     <Projects projects={projects} title="latest projects" />
+    <Survey />
     <Slider />
   </Layout>
 );
