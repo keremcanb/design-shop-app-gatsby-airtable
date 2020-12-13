@@ -11,6 +11,19 @@ import {
 } from '../components';
 import SEO from '../components/Seo/seo';
 
+const HomePage = ({
+  data: {
+    allAirtable: { nodes: projects }
+  }
+}) => (
+  <Layout>
+    <Hero />
+    <About />
+    <Projects projects={projects} title="latest projects" />
+    <Slider />
+  </Layout>
+);
+
 export const query = graphql`
   {
     allAirtable(
@@ -38,17 +51,5 @@ export const query = graphql`
     }
   }
 `;
-
-const HomePage = ({
-  data: {
-    allAirtable: { nodes: projects }
-  }
-}) => (
-  <Layout>
-    <Hero />
-    <About />
-    <Projects projects={projects} title="latest projects" />
-  </Layout>
-);
 
 export default HomePage;

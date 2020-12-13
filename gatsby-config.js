@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
@@ -6,12 +7,12 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Design Shop`,
-    description: `Gatsby Airtable Example. Built using Airtable, Algolia Search, Gatsby Background Image plugin and  React Context API. Containts two sliders, real-time Airtable updates and submenus. Styled using Styled-Components. `,
-    author: `@johnsmilga`,
+    description: `Gatsby Airtable Example. Built using Airtable, Algolia Search, Gatsby Background Image plugin and React Context API. Contains two sliders, real-time Airtable updates and sub menus. Styled using Styled-Components.`,
+    author: `@keremcan`,
     titleTemplate: `%s | Gatsby - Airtable`,
     url: `https://gatsby-airtable-design-project.netlify.app/`,
     image: `mainBcg.png`,
-    twitterUsername: `@john_smilga`
+    twitterUsername: `@keremcan`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -42,12 +43,12 @@ module.exports = {
             baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
             tableName: `Projects`,
             mapping: { image: `fileNode` }
+          },
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+            tableName: `Customers`,
+            mapping: { image: `fileNode` }
           }
-          // {
-          //   baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
-          //   tableName: `Customers`,
-          //   mapping: { image: `fileNode` }
-          // }
         ]
       }
     }
