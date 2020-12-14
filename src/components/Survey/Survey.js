@@ -15,7 +15,7 @@ const Survey = () => {
       .select({})
       .firstPage()
       .catch((err) => console.log(err));
-    console.log(records);
+
     const newItems = records.map(({ id, fields }) => ({ id, fields }));
     // Pass records to items state
     setItems(newItems);
@@ -24,8 +24,9 @@ const Survey = () => {
 
   // Vote
   const giveVote = async (id) => {
-    setLoading(true);
+    // setLoading(true);
 
+    // Take all items from state
     const tempItems = [...items].map((item) => {
       if (item.id === id) {
         let { id, fields } = item;
@@ -44,7 +45,7 @@ const Survey = () => {
     const newItems = records.map(({ id, fields }) => ({ id, fields }));
 
     setItems(newItems);
-    setLoading(false);
+    // setLoading(false);
   };
 
   useEffect(() => {
