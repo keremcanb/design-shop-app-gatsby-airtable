@@ -1,8 +1,8 @@
+/* eslint-disable global-require */
 /* eslint-disable no-useless-escape */
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
-// const queries = require("./src/constants/algolia")
 
 module.exports = {
   siteMetadata: {
@@ -17,6 +17,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,8 +26,6 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -51,16 +51,16 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries: require('./src/constants/algolia'),
+        chunkSize: 10000
+      }
     }
-    // {
-    //   resolve: `gatsby-plugin-algolia`,
-    //   options: {
-    //     appId: process.env.GATSBY_ALGOLIA_APP_ID,
-    //     apiKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
-    //     indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-    //     queries: require("./src/constants/algolia"),
-    //     chunkSize: 10000,
-    //   },
-    // },
   ]
 };

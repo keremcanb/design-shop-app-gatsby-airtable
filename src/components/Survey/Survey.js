@@ -24,8 +24,6 @@ const Survey = () => {
 
   // Vote
   const giveVote = async (id) => {
-    // setLoading(true);
-
     // Take all items from state
     const tempItems = [...items].map((item) => {
       if (item.id === id) {
@@ -35,6 +33,7 @@ const Survey = () => {
 
         return { id, fields };
       }
+
       return item;
     });
 
@@ -45,7 +44,6 @@ const Survey = () => {
     const newItems = records.map(({ id, fields }) => ({ id, fields }));
 
     setItems(newItems);
-    // setLoading(false);
   };
 
   useEffect(() => {

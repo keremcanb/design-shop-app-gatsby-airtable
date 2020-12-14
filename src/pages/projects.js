@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout, Projects, Algolia } from '../../components';
-import { Wrapper } from './styles';
+import styled from 'styled-components';
+import { Layout, Projects, Algolia } from '../components';
 
 const ProjectsPage = ({
   data: {
@@ -15,6 +15,14 @@ const ProjectsPage = ({
     </Layout>
   </Wrapper>
 );
+
+const Wrapper = styled.main`
+  min-height: 100vh;
+  background: var(--clr-grey-10);
+  nav {
+    background: var(--clr-primary-7);
+  }
+`;
 
 export const query = graphql`
   {

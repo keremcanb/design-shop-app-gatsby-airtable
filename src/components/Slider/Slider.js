@@ -51,33 +51,36 @@ const Slider = () => {
       <Title title="reviews" />
 
       <div className="section-center">
-        {customers.map((customer, customerIndex) => {
-          const {
-            data: { image, name, title, quote }
-          } = customer;
-          const customerImg = image.localFiles[0].childImageSharp.fixed;
+        {customers.map(
+          ({ data: { image, name, title, quote } }, customerIndex) => {
+            const customerImg = image.localFiles[0].childImageSharp.fixed;
 
-          let position = 'nextSlide';
-          if (customerIndex === index) {
-            position = 'activeSlide';
-          }
-          if (
-            customerIndex === index - 1 ||
-            (index === 0 && customerIndex === customers.length - 1)
-          ) {
-            position = 'lastSlide';
-          }
+            let position = 'nextSlide';
 
-          return (
-            <article className={position} key={customerIndex}>
-              <Image fixed={customerImg} className="img" />
-              <h4>{name}</h4>
-              <p className="title">{title}</p>
-              <p className="text">{quote}</p>
-              <FaQuoteRight className="icon" />
-            </article>
-          );
-        })}
+            if (customerIndex === index) {
+              position = 'activeSlide';
+            }
+            if (
+              customerIndex === index - 1 ||
+              (index === 0 && customerIndex === customers.length - 1)
+            ) {
+              position = 'lastSlide';
+            }
+
+            return (
+              <article className={position} key={customerIndex}>
+                <Image fixed={customerImg} className="img" />
+
+                <h4>{name}</h4>
+
+                <p className="title">{title}</p>
+                <p className="text">{quote}</p>
+
+                <FaQuoteRight className="icon" />
+              </article>
+            );
+          }
+        )}
 
         <button className="prev" onClick={() => setIndex(index - 1)}>
           <FiChevronLeft />

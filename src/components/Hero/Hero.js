@@ -7,15 +7,17 @@ import Background from '../Layout/Background/Background';
 import { Wrapper } from './styles';
 
 const Hero = ({ projects }) => {
-  const images = projects.map((item) => {
-    const {
+  const images = projects.map(
+    ({
       data: {
         image: { localFiles }
       }
-    } = item;
-    const image = localFiles[0].childImageSharp.fluid;
-    return image;
-  });
+    }) => {
+      const image = localFiles[0].childImageSharp.fluid;
+
+      return image;
+    }
+  );
 
   const [index, setIndex] = useState(0);
 
@@ -58,4 +60,5 @@ const Hero = ({ projects }) => {
     </Wrapper>
   );
 };
+
 export default Hero;
