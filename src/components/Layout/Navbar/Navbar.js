@@ -9,6 +9,9 @@ import { Wrapper } from './styles';
 const Navbar = () => {
   const { isSidebarOpen, showSidebar, links } = useContext(GatsbyContext);
 
+  // Get unique values
+  const tempLinks = [...new Set(links.map((link) => link.page))];
+
   return (
     <Wrapper>
       <div className="nav-center">
@@ -25,15 +28,9 @@ const Navbar = () => {
         </div>
 
         <ul className="nav-links">
-          <li>
-            <button>products</button>
-          </li>
-          <li>
-            <button>developers</button>
-          </li>
-          <li>
-            <button>company</button>
-          </li>
+          {tempLinks.map((page, index) => (
+            <NavLink key={index} page={page} />
+          ))}
         </ul>
       </div>
     </Wrapper>
