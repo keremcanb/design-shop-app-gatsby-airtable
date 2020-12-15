@@ -3,7 +3,24 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Layout } from '../../components';
 
-const Payments = () => <h2>payments page</h2>;
+const Payments = ({ location: { pathname } }) => {
+  // Remove start forward slash
+  const path = pathname.slice(1);
+
+  return (
+    <Layout>
+      <Wrapper>
+        <div>
+          <h1>{path}</h1>
+
+          <Link to="/" className="btn">
+            home
+          </Link>
+        </div>
+      </Wrapper>
+    </Layout>
+  );
+};
 
 const Wrapper = styled.main`
   margin-top: -5rem;

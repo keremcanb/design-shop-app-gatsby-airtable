@@ -3,34 +3,41 @@ import { GoThreeBars } from 'react-icons/go';
 import { Link } from 'gatsby';
 import logo from '../../../images/logo.svg';
 import NavLink from '../NavLink/NavLink';
+import { GatsbyContext } from '../../../context/context';
 import { Wrapper } from './styles';
 
-const Navbar = () => (
-  <Wrapper>
-    <div className="nav-center">
-      <div className="nav-header">
-        <Link to="/">
-          <img src={logo} alt="design" />
-        </Link>
+const Navbar = () => {
+  const { isSidebarOpen, showSidebar, links } = useContext(GatsbyContext);
 
-        <button className="toggle-btn">
-          <GoThreeBars />
-        </button>
+  return (
+    <Wrapper>
+      <div className="nav-center">
+        <div className="nav-header">
+          <Link to="/">
+            <img src={logo} alt="design" />
+          </Link>
+
+          {!isSidebarOpen && (
+            <button className="toggle-btn" onClick={showSidebar}>
+              <GoThreeBars />
+            </button>
+          )}
+        </div>
+
+        <ul className="nav-links">
+          <li>
+            <button>products</button>
+          </li>
+          <li>
+            <button>developers</button>
+          </li>
+          <li>
+            <button>company</button>
+          </li>
+        </ul>
       </div>
-
-      <ul className="nav-links">
-        <li>
-          <button>products</button>
-        </li>
-        <li>
-          <button>developers</button>
-        </li>
-        <li>
-          <button>company</button>
-        </li>
-      </ul>
-    </div>
-  </Wrapper>
-);
+    </Wrapper>
+  );
+};
 
 export default Navbar;

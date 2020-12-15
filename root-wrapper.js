@@ -1,6 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-// import { GatsbyProvider } from './src/context/context';
+import { GatsbyProvider } from './src/context/context';
 
 const GlobalStyle = createGlobalStyle`
 /*
@@ -176,7 +176,6 @@ p {
 export const wrapRootElement = ({ element }) => (
   <>
     <GlobalStyle />
-    {element}
-    {/* <GatsbyProvider>{element}</GatsbyProvider> */}
+    <GatsbyProvider>{element}</GatsbyProvider>
   </>
 );
