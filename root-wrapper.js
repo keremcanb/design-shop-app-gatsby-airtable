@@ -171,8 +171,8 @@ p {
     width: 95vw;
   }
 }
-
 `;
+
 export const wrapRootElement = ({ element }) => (
   <>
     <GlobalStyle />

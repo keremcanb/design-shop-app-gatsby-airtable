@@ -20,6 +20,7 @@ const NewHits = connectHits(({ hits }) =>
   hits.map(({ objectID, image, name }) => (
     <article key={objectID}>
       <Image fluid={image} className="img" />
+
       <h4>{name}</h4>
     </article>
   ))
